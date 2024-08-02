@@ -1,6 +1,7 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
-import { getDatabase, ref, get, set } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-database.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -10,7 +11,6 @@ const firebaseConfig = {
     storageBucket: "tsorder-830ef.appspot.com",
     messagingSenderId: "972694354067",
     appId: "1:972694354067:web:790f69b681d9e71c5c7566",
-    databaseURL: "https://tsorder-830ef-default-rtdb.firebaseio.com/", // Added databaseURL
 };
 
 // Initialize Firebase
