@@ -1,3 +1,16 @@
+// Your web app's Firebase configuration
+var firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+    databaseURL: "https://YOUR_PROJECT_ID.firebaseio.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT_ID.appspot.com",
+    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+    appId: "YOUR_APP_ID",
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
 const TS_MEMBERS = ["Christian", "Niko", "Olga", "Elisa", "Krystyna", "Iryna Z", "Stefanos", "Julia", "Hasan", "Thomas", "Iryna P", "Anna", "Robert"];
 
 function shuffleArray(array) {
@@ -12,23 +25,29 @@ function checkAndShuffleDaily() {
     const now = new Date();
     const currentDay = now.toISOString().split("T")[0]; // Current date in YYYY-MM-DD format
 
-    const lastShuffle = localStorage.getItem("lastShuffleDate");
-    const shuffledArray = localStorage.getItem("shuffledTSMembers");
+    const db = firebase.database();
+    const ref = db.ref("shuffledTSMembers");
 
-    if (!lastShuffle || lastShuffle !== currentDay || !shuffledArray) {
-        const newShuffledArray = shuffleArray([...TS_MEMBERS]);
-        localStorage.setItem("lastShuffleDate", currentDay);
-        localStorage.setItem("shuffledTSMembers", JSON.stringify(newShuffledArray));
-        return newShuffledArray;
-    }
-
-    return JSON.parse(shuffledArray);
+    ref.once("value").then((snapshot) => {
+        const data = snapshot.val();
+        if (!data || data.date !== currentDay) {
+            // Shuffle the array and store it in Firebase
+            const newShuffledArray = shuffleArray([...TS_MEMBERS]);
+            ref.set({
+                date: currentDay,
+                members: newShuffledArray,
+            });
+            displayMembers(newShuffledArray);
+        } else {
+            displayMembers(data.members);
+        }
+    });
 }
 
-const shuffledTSMembers = checkAndShuffleDaily();
-console.log(shuffledTSMembers); // Display the shuffled array in the console
-
-// Optionally, display the shuffled array in the HTML
-document.body.innerHTML = `<ul>${shuffledTSMembers.map((member) => `<li>${member}</li>`).join("")}</ul>`;
-
+// Function to display members
+function displayMembers(members) {
+    console.log(members); // Display the shuffled array in the console
+    document.body.innerHTML = `<ol>${members.map((member) => `<li>${member}</li>`).join("")}</ol>`;
+}
 console.log("## ", TS_MEMBERS);
+console.log("## ", shuffledTSMembers); // Display the shuffled array in the console
