@@ -1,7 +1,6 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
+import { getDatabase, ref, get, set } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-database.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -11,10 +10,12 @@ const firebaseConfig = {
     storageBucket: "tsorder-830ef.appspot.com",
     messagingSenderId: "972694354067",
     appId: "1:972694354067:web:790f69b681d9e71c5c7566",
+    databaseURL: "https://tsorder-830ef-default-rtdb.firebaseio.com/", // Added databaseURL
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
 
 const TS_MEMBERS = ["Christian", "Niko", "Olga", "Elisa", "Krystyna", "Iryna Z", "Stefanos", "Julia", "Hasan", "Thomas", "Iryna P", "Anna", "Robert"];
 
@@ -30,23 +31,26 @@ function checkAndShuffleDaily() {
     const now = new Date();
     const currentDay = now.toISOString().split("T")[0]; // Current date in YYYY-MM-DD format
 
-    const db = firebase.database();
-    const ref = db.ref("shuffledTSMembers");
+    const dataRef = ref(db, "shuffledTSMembers");
 
-    ref.once("value").then((snapshot) => {
-        const data = snapshot.val();
-        if (!data || data.date !== currentDay) {
-            // Shuffle the array and store it in Firebase
-            const newShuffledArray = shuffleArray([...TS_MEMBERS]);
-            ref.set({
-                date: currentDay,
-                members: newShuffledArray,
-            });
-            displayMembers(newShuffledArray);
-        } else {
-            displayMembers(data.members);
-        }
-    });
+    get(dataRef)
+        .then((snapshot) => {
+            const data = snapshot.val();
+            if (!data || data.date !== currentDay) {
+                // Shuffle the array and store it in Firebase
+                const newShuffledArray = shuffleArray([...TS_MEMBERS]);
+                set(dataRef, {
+                    date: currentDay,
+                    members: newShuffledArray,
+                });
+                displayMembers(newShuffledArray);
+            } else {
+                displayMembers(data.members);
+            }
+        })
+        .catch((error) => {
+            console.error("Error getting data: ", error);
+        });
 }
 
 // Function to display members
@@ -54,3 +58,6 @@ function displayMembers(members) {
     console.log("##", members);
     document.body.innerHTML = `<ol>${members.map((member) => `<li>${member}</li>`).join("")}</ol>`;
 }
+
+// Call the function to check and shuffle daily
+checkAndShuffleDaily();
