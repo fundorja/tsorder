@@ -46,8 +46,6 @@ function checkAndShuffleDaily() {
 
 // Function to display members
 function displayMembers(members) {
-    console.log(members); // Display the shuffled array in the console
+    console.log("##", members);
     document.body.innerHTML = `<ol>${members.map((member) => `<li>${member}</li>`).join("")}</ol>`;
 }
-console.log("## ", TS_MEMBERS);
-console.log("## ", shuffledTSMembers); // Display the shuffled array in the console
