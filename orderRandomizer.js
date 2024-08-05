@@ -1,64 +1,37 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
-import { getDatabase, ref, get, set } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+const { GoogleSpreadsheet } = require("google-spreadsheet");
+const creds = require("./path/to/your/service/account/json/file.json"); // Pfad zu deiner Service-Account-JSON-Datei
 
-// Your web app's Firebase configuration
-const firebaseConfig = {
-    apiKey: "AIzaSyDVaj6AD18wtNqS082VD1NxJrfLWbgL5Ig",
-    authDomain: "tsorder-830ef.firebaseapp.com",
-    projectId: "tsorder-830ef",
-    storageBucket: "tsorder-830ef.appspot.com",
-    messagingSenderId: "972694354067",
-    appId: "1:972694354067:web:790f69b681d9e71c5c7566",
-};
+async function accessSpreadsheet() {
+    // Spreadsheet-ID aus der URL der Tabelle entnehmen
+    const doc = new GoogleSpreadsheet("your-spreadsheet-id");
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
+    // Authentifizieren mit den Service-Account-Credentials
+    await doc.useServiceAccountAuth(creds);
 
-const TS_MEMBERS = ["Christian", "Niko", "Olga", "Elisa", "Krystyna", "Iryna Z", "Stefanos", "Julia", "Hasan", "Thomas", "Iryna P", "Anna", "Robert"];
+    // Lese Informationen über das Dokument
+    await doc.loadInfo();
+    console.log(`Title: ${doc.title}`);
 
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
+    // Greife auf das erste Blatt zu
+    const sheet = doc.sheetsByIndex[0];
+    console.log(`Sheet title: ${sheet.title}`);
+    console.log(`Rows: ${sheet.rowCount}`);
+
+    // Lese Zeilen
+    const rows = await sheet.getRows();
+    rows.forEach((row) => {
+        console.log(row._rawData); // Alle Spalten ausgeben
+    });
+
+    // Füge eine neue Zeile hinzu
+    await sheet.addRow({ Column1: "Value1", Column2: "Value2" });
+
+    // Aktualisiere eine bestehende Zeile
+    rows[0].Column1 = "Updated Value";
+    await rows[0].save();
+
+    // Lösche eine Zeile
+    await rows[0].delete();
 }
 
-function checkAndShuffleDaily() {
-    const now = new Date();
-    const currentDay = now.toISOString().split("T")[0]; // Current date in YYYY-MM-DD format
-
-    const dataRef = ref(db, "shuffledTSMembers");
-
-    get(dataRef)
-        .then((snapshot) => {
-            const data = snapshot.val();
-            if (!data || data.date !== currentDay) {
-                // Shuffle the array and store it in Firebase
-                const newShuffledArray = shuffleArray([...TS_MEMBERS]);
-                set(dataRef, {
-                    date: currentDay,
-                    members: newShuffledArray,
-                });
-                displayMembers(newShuffledArray);
-            } else {
-                displayMembers(data.members);
-            }
-        })
-        .catch((error) => {
-            console.error("Error getting data: ", error);
-        });
-}
-
-// Function to display members
-function displayMembers(members) {
-    console.log("##", members);
-    document.body.innerHTML = `<ol>${members.map((member) => `<li>${member}</li>`).join("")}</ol>`;
-}
-
-// Call the function to check and shuffle daily
-checkAndShuffleDaily();
+accessSpreadsheet().catch(console.error);
