@@ -113,6 +113,10 @@ body .ts-wrap {
           justify-content: center;
 }
 
+body .ts-wrap.darkBG {
+  background: linear-gradient(35deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.3) 100%);
+}
+
 body .ts-wrap h1 {
   position: relative;
   z-index: 1;
@@ -120,6 +124,12 @@ body .ts-wrap h1 {
   text-align: center;
   font-size: 2rem;
   text-shadow: 0 0 10px #fffde9;
+  color: black;
+}
+
+body .ts-wrap h1.darkBG {
+  color: white;
+  text-shadow: 0 0 10px #070700;
 }
 
 body .ts-wrap ol {
@@ -152,6 +162,7 @@ body .ts-wrap ol li {
   line-height: 1.4;
   text-decoration: none;
   cursor: pointer;
+  color: black;
 }
 
 body .ts-wrap ol li.strike {
@@ -163,6 +174,18 @@ body .ts-wrap ol li:hover {
   text-shadow: 0 0 6px #fffefa;
   -webkit-transform: scale(1.03);
           transform: scale(1.03);
+}
+
+body .ts-wrap ol li.darkBG {
+  color: white;
+}
+
+body .ts-wrap ol li.darkBG.strike {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+body .ts-wrap ol li.darkBG:hover {
+  text-shadow: 0 0 6px #050400;
 }
 
 @media (max-height: 620px) {

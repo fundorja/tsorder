@@ -76,6 +76,10 @@ body {
         align-items: center;
         justify-content: center;
 
+        &.darkBG {
+            background: linear-gradient(35deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.3) 100%);
+        }
+
         h1 {
             position: relative;
             z-index: 1;
@@ -83,6 +87,12 @@ body {
             text-align: center;
             font-size: 2rem;
             text-shadow: 0 0 10px rgb(255, 253, 233);
+            color: black;
+
+            &.darkBG {
+                color: white;
+                text-shadow: 0 0 10px rgb(7, 7, 0);
+            }
         }
 
         ol {
@@ -101,6 +111,7 @@ body {
                 line-height: 1.4;
                 text-decoration: none;
                 cursor: pointer;
+                color: black;
 
                 &.strike {
                     text-decoration: line-through;
@@ -110,6 +121,16 @@ body {
                 &:hover {
                     text-shadow: 0 0 6px rgb(255, 254, 250);
                     transform: scale(1.03);
+                }
+
+                &.darkBG {
+                    color: white;
+                    &.strike {
+                        color: rgba(255, 255, 255, 0.4);
+                    }
+                    &:hover {
+                        text-shadow: 0 0 6px rgb(5, 4, 0);
+                    }
                 }
             }
         }

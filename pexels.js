@@ -46,10 +46,20 @@ function checkImage(url) {
             if (isDark) {
                 document.querySelector(".date").style.color = "white";
                 document.querySelector(".time").style.color = "white";
+                document.querySelector(".ts-wrap").classList.add("darkBG");
+                document.querySelector(".ts-wrap h1").classList.add("darkBG");
+                document.querySelectorAll(".ts-wrap li").forEach((name) => {
+                    name.classList.add("darkBG");
+                });
                 console.log("## dunkel");
             } else {
                 document.querySelector(".date").style.color = "black";
                 document.querySelector(".time").style.color = "black";
+                document.querySelector(".ts-wrap").classList.remove("darkBG");
+                document.querySelector(".ts-wrap h1").classList.remove("darkBG");
+                document.querySelectorAll(".ts-wrap li").forEach((name) => {
+                    name.classList.remove("darkBG");
+                });
                 console.log("## hell");
             }
         });
@@ -94,7 +104,7 @@ function isImageDark(imageUrl, callback) {
         }
 
         const averageBrightness = totalBrightness / numPixels;
-        const isDark = averageBrightness < 0.4; // Schwellenwert für Dunkelheit
+        const isDark = averageBrightness < 0.3; // Schwellenwert für Dunkelheit
 
         callback(isDark);
     };
