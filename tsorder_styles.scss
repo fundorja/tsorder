@@ -43,30 +43,70 @@ body {
         // --borders: 1vh solid rgba(255, 255, 255, 0.4);
         box-sizing: border-box;
         margin: 0;
-        padding: 0;
+        padding: 2rem;
         font-family: "Nunito", sans-serif;
-        border-top: 1px solid rgba(255, 255, 255, 0.5);
-        border-left: 1px solid rgba(255, 255, 255, 0.5);
-        background: linear-gradient(35deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.2) 100%);
-        width: 105vh;
-        height: 80vh;
+        border-top: 1px solid rgba(255, 255, 255, 0.4);
+        border-left: 1px solid rgba(255, 255, 255, 0.4);
+        background: linear-gradient(35deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.3) 100%);
+        width: 85vh;
+        height: 70vh;
         border-radius: 2rem;
         z-index: 20;
         backdrop-filter: blur(5px);
         box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.1);
         transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
         will-change: transform;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
 
         h1 {
             position: relative;
             z-index: 1;
-            text-shadow: 0 0 5px white;
+            text-shadow: 0 0 5px rgb(255, 253, 233);
+            text-transform: uppercase;
+            text-align: center;
         }
 
         ol {
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
             li {
-                text-shadow: 0 0 2px white;
+                text-shadow: 0 0 2px rgb(255, 253, 233);
                 font-weight: 600;
+                font-size: 20px;
+                line-height: 1.4;
+                text-decoration: none;
+
+                &:hover {
+                    text-shadow: 0 0 4px #00affe;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+@media (min-height: 630px) {
+    body {
+        .ts-wrap {
+            h1 {
+                text-transform: none;
+                font-size: 20px;
+            }
+
+            ol {
+                margin-top: 0.4rem;
+
+                li {
+                    font-size: 14px;
+                    line-height: 1.2;
+                }
             }
         }
     }

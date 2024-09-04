@@ -49,13 +49,13 @@ body .ts-wrap {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
-  padding: 0;
+  padding: 2rem;
   font-family: "Nunito", sans-serif;
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
-  border-left: 1px solid rgba(255, 255, 255, 0.5);
-  background: linear-gradient(35deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.2) 100%);
-  width: 105vh;
-  height: 80vh;
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  border-left: 1px solid rgba(255, 255, 255, 0.4);
+  background: linear-gradient(35deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.3) 100%);
+  width: 85vh;
+  height: 70vh;
   border-radius: 2rem;
   z-index: 20;
   -webkit-backdrop-filter: blur(5px);
@@ -65,16 +65,70 @@ body .ts-wrap {
   -webkit-transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
           transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
   will-change: transform;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 body .ts-wrap h1 {
   position: relative;
   z-index: 1;
-  text-shadow: 0 0 5px white;
+  text-shadow: 0 0 5px #fffde9;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+body .ts-wrap ol {
+  margin-top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 body .ts-wrap ol li {
-  text-shadow: 0 0 2px white;
+  text-shadow: 0 0 2px #fffde9;
   font-weight: 600;
+  font-size: 20px;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+body .ts-wrap ol li:hover {
+  text-shadow: 0 0 4px #00affe;
+  text-decoration: underline;
+}
+
+@media (min-height: 630px) {
+  body .ts-wrap h1 {
+    text-transform: none;
+    font-size: 20px;
+  }
+  body .ts-wrap ol {
+    margin-top: 0.4rem;
+  }
+  body .ts-wrap ol li {
+    font-size: 14px;
+    line-height: 1.2;
+  }
 }
 /*# sourceMappingURL=tsorder_styles.css.map */
