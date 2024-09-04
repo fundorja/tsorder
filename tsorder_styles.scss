@@ -125,6 +125,8 @@ body {
 
                 &.darkBG {
                     color: white;
+                    text-shadow: 0 0 4px rgb(11, 10, 0);
+
                     &.strike {
                         color: rgba(255, 255, 255, 0.4);
                     }

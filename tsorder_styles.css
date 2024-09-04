@@ -178,6 +178,7 @@ body .ts-wrap ol li:hover {
 
 body .ts-wrap ol li.darkBG {
   color: white;
+  text-shadow: 0 0 4px #0b0a00;
 }
 
 body .ts-wrap ol li.darkBG.strike {
