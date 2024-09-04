@@ -44,9 +44,13 @@ function checkImage(url) {
 
         isImageDark(backgroundImageUrl, (isDark) => {
             if (isDark) {
-                console.log("Das Hintergrundbild ist dunkel.");
+                document.querySelector(".date").style.color = "white";
+                document.querySelector(".time").style.color = "white";
+                console.log("## dunkel");
             } else {
-                console.log("Das Hintergrundbild ist hell.");
+                document.querySelector(".date").style.color = "black";
+                document.querySelector(".time").style.color = "black";
+                console.log("## hell");
             }
         });
     };
@@ -90,7 +94,7 @@ function isImageDark(imageUrl, callback) {
         }
 
         const averageBrightness = totalBrightness / numPixels;
-        const isDark = averageBrightness < 0.5; // Schwellenwert für Dunkelheit
+        const isDark = averageBrightness < 0.4; // Schwellenwert für Dunkelheit
 
         callback(isDark);
     };
