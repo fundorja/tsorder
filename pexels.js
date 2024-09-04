@@ -40,7 +40,7 @@ function checkImage(url) {
     img.onload = function () {
         document.body.style.backgroundImage = `url(${url})`;
 
-        const backgroundImageUrl = getComputedStyle(document.getElementById("background")).backgroundImage.slice(5, -2);
+        const backgroundImageUrl = getComputedStyle(document.body).backgroundImage.slice(5, -2);
 
         isImageDark(backgroundImageUrl, (isDark) => {
             if (isDark) {
