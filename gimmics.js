@@ -31,10 +31,13 @@ setInterval(updateDateTime, 1000);
 
 // Pfad zur Audio-Datei
 const sound = new Audio("laserShoot1.wav");
-const hoverTarget = document.querySelectorAll(".ts-wrap li");
-hoverTarget.addEventListener("mouseover", () => {
-    sound.currentTime = 0; // Setzt den Sound auf den Anfang zurück
-    sound.play();
+const hoverTargets = document.querySelectorAll(".ts-wrap li");
+
+hoverTargets.forEach((hoverTarget) => {
+    hoverTarget.addEventListener("mouseover", () => {
+        sound.currentTime = 0; // Setzt den Sound auf den Anfang zurück
+        sound.play();
+    });
 });
 
 jTrbo(document).ready(function () {
