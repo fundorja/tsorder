@@ -5,7 +5,10 @@ name: Update Name List
 # time is UTC also München Sommer = Stunde-2h, Winder = Stunde-1h
 on:
     schedule:
-        - cron: "22 14 * * 1-5"
+        # 1 minute nach commit
+        - cron: "*/1 * * * *"
+
+        #  - cron: "22 14 * * 1-5"
 
 jobs:
     update-names:
