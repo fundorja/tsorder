@@ -1,5 +1,3 @@
-import mojs from "@mojs/core";
-
 const burst = new mojs.Burst({
     left: 0,
     top: 0,
