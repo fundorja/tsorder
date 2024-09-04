@@ -39,6 +39,16 @@ function checkImage(url) {
     const img = new Image();
     img.onload = function () {
         document.body.style.backgroundImage = `url(${url})`;
+
+        const backgroundImageUrl = getComputedStyle(document.getElementById("background")).backgroundImage.slice(5, -2);
+
+        isImageDark(backgroundImageUrl, (isDark) => {
+            if (isDark) {
+                console.log("Das Hintergrundbild ist dunkel.");
+            } else {
+                console.log("Das Hintergrundbild ist hell.");
+            }
+        });
     };
     img.onerror = function () {
         console.error("Failed to load image, trying another one...");
@@ -49,26 +59,43 @@ function checkImage(url) {
 
 setBackgroundImage();
 
-/*
-const endpoint = "https://api.pexels.com/videos/search?query=breathtaking&per_page=1";
+function isImageDark(imageUrl, callback) {
+    const img = new Image();
+    img.crossOrigin = "Anonymous"; // Notwendig für CORS, falls Bild von anderer Domain kommt
+    img.src = imageUrl;
 
-async function setBackgroundVideo() {
-    try {
-        const response = await fetch(endpoint, {
-            headers: {
-                Authorization: apiKey,
-            },
-        });
-        const data = await response.json();
-        const videoUrl = data.videos[0].video_files[0].link;
-        const videoElement = document.getElementById("background-video");
-        videoElement.src = videoUrl;
-        videoElement.play();
-    } catch (error) {
-        console.error("Error fetching the video:", error);
-    }
+    img.onload = function () {
+        const canvas = document.createElement("canvas");
+        const context = canvas.getContext("2d");
+        canvas.width = img.width;
+        canvas.height = img.height;
+
+        context.drawImage(img, 0, 0);
+        const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+        const data = imageData.data;
+
+        let r, g, b, avg;
+        let totalBrightness = 0;
+        let numPixels = 0;
+
+        for (let i = 0; i < data.length; i += 4) {
+            r = data[i];
+            g = data[i + 1];
+            b = data[i + 2];
+
+            // Helligkeit nach der Formel Y = 0.299R + 0.587G + 0.114B
+            avg = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+            totalBrightness += avg;
+            numPixels++;
+        }
+
+        const averageBrightness = totalBrightness / numPixels;
+        const isDark = averageBrightness < 0.5; // Schwellenwert für Dunkelheit
+
+        callback(isDark);
+    };
+
+    img.onerror = function () {
+        console.error("Fehler beim Laden des Bildes");
+    };
 }
-
-// Rufe das Hintergrundvideo ab und setze es
-setBackgroundVideo();
-*/
