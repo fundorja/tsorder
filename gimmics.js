@@ -29,6 +29,14 @@ function updateDateTime() {
 updateDateTime();
 setInterval(updateDateTime, 1000);
 
+// Pfad zur Audio-Datei
+const sound = new Audio("laserShoot1.wav");
+const hoverTarget = document.querySelector(".hover-target");
+hoverTarget.addEventListener("mouseover", () => {
+    sound.currentTime = 0; // Setzt den Sound auf den Anfang zurück
+    sound.play();
+});
+
 console.log("## trbo init", jTrbo("li"));
 
 jTrbo("li").on("click", function () {
