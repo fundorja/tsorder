@@ -28,3 +28,11 @@ function updateDateTime() {
 // Initiales Update und Intervall für das Zeit-Update setzen
 updateDateTime();
 setInterval(updateDateTime, 1000);
+
+jTrbo("li").on("click", function () {
+    if (!jTrbo(this).hasClass("strike")) {
+        jTrbo(this).addClass("strike");
+    } else {
+        jTrbo(this).removeClass("strike");
+    }
+});

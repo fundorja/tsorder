@@ -60,15 +60,15 @@ body {
         margin: 0 0 2rem;
         padding: 1.5rem 1rem 2rem;
         font-family: "Nunito", sans-serif;
-        border-top: 1px solid rgba(255, 255, 255, 0.4);
-        border-left: 1px solid rgba(255, 255, 255, 0.4);
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        border-left: 1px solid rgba(255, 255, 255, 0.3);
         background: linear-gradient(35deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.3) 100%);
         width: 85vh;
         height: 70vh;
         border-radius: 2rem;
         z-index: 20;
         backdrop-filter: blur(5px);
-        box-shadow: 2px 2px 24px rgba(0, 0, 0, 0.5);
+        box-shadow: 2px 2px 30px rgba(0, 22, 41, 0.3);
         transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
         will-change: transform;
         display: flex;
@@ -99,6 +99,11 @@ body {
                 line-height: 1.4;
                 text-decoration: none;
                 cursor: pointer;
+
+                &.strike {
+                    text-decoration: line-through;
+                    color: rgba(0, 0, 0, 0.4);
+                }
 
                 &:hover {
                     text-shadow: 0 0 6px rgb(255, 254, 250);
