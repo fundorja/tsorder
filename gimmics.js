@@ -37,7 +37,7 @@ const hoverTargets = document.querySelectorAll(".ts-wrap li");
 
 hoverTargets.forEach((hoverTarget) => {
     hoverTarget.addEventListener("mouseover", () => {
-        sound.currentTime = 0; // Setzt den Sound auf den Anfang zurück
+        // sound.currentTime = 0; // Setzt den Sound auf den Anfang zurück
         sound.play();
         sound.play().catch((error) => {
             console.error("Error playing sound:", error);
@@ -45,11 +45,20 @@ hoverTargets.forEach((hoverTarget) => {
     });
 });
 
-document.addEventListener("click", () => {
-    sound.currentTime = 0;
-    sound.play().catch((error) => {
-        console.error("Error playing sound:", error);
-    });
+hoverTargets.forEach((hoverTarget) => {
+    if (hoverTarget.classList.contains("strike")) {
+        hoverTarget.classList.remove("strike");
+        // powerUpSound.currentTime = 0;
+        powerUpSound.play().catch((error) => {
+            console.error("Error playing sound:", error);
+        });
+    } else {
+        hoverTarget.classList.add("strike");
+        // explosionSound.currentTime = 0;
+        explosionSound.play().catch((error) => {
+            console.error("Error playing sound:", error);
+        });
+    }
 });
 
 // jTrbo(document).ready(function () {
