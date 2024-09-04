@@ -40,22 +40,25 @@ hoverTargets.forEach((hoverTarget) => {
             console.error("Error playing sound:", error);
         });
     });
-});
 
-hoverTargets.forEach((hoverTarget) => {
-    if (hoverTarget.classList.contains("strike")) {
-        hoverTarget.classList.remove("strike");
-        // powerUpSound.currentTime = 0;
-        powerUpSound.play().catch((error) => {
-            console.error("Error playing sound:", error);
-        });
-    } else {
-        hoverTarget.classList.add("strike");
-        explosionSound.currentTime = 0;
-        explosionSound.play().catch((error) => {
-            console.error("Error playing sound:", error);
-        });
-    }
+    hoverTarget.addEventListener("click", () => {
+        // Toggle der Klasse .strike
+        if (hoverTarget.classList.contains("strike")) {
+            hoverTarget.classList.remove("strike");
+            // Wenn die Klasse entfernt wird, spiele den powerUp-Sound ab
+            powerUpSound.currentTime = 0; // Setzt den Sound auf den Anfang zurück
+            powerUpSound.play().catch((error) => {
+                console.error("Error playing sound:", error);
+            });
+        } else {
+            hoverTarget.classList.add("strike");
+            // Wenn die Klasse hinzugefügt wird, spiele den explosion-Sound ab
+            explosionSound.currentTime = 0; // Setzt den Sound auf den Anfang zurück
+            explosionSound.play().catch((error) => {
+                console.error("Error playing sound:", error);
+            });
+        }
+    });
 });
 
 // jTrbo(document).ready(function () {
