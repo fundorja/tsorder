@@ -2,7 +2,7 @@ const apiKey = "563492ad6f917000010000018eab46c0ee374b6eb502a86a04ce109c";
 
 // const endpoont = "https://api.pexels.com/v1/curated?per_page=1";
 // const videoEndpoint = "https://api.pexels.com/videos/videos/";
-const natureEndpoint = "https://api.pexels.com/v1/search?query=nature?curated?per_page=1";
+const natureEndpoint = "https://api.pexels.com/v1/search?query=nature?per_page=1";
 
 async function setBackground() {
     try {

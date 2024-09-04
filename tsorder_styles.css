@@ -21,6 +21,10 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -43,6 +47,22 @@ body #background-video {
   -o-object-fit: cover;
      object-fit: cover;
   z-index: -1;
+}
+
+body .date-box {
+  margin: 0.5rem;
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+body .date-box .date {
+  font-size: 1.5rem;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+body .date-box .time {
+  font-size: 1.2rem;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 body .ts-wrap {
@@ -86,6 +106,7 @@ body .ts-wrap h1 {
   text-shadow: 0 0 5px #fffde9;
   text-transform: uppercase;
   text-align: center;
+  font-size: 2rem;
 }
 
 body .ts-wrap ol {
@@ -122,7 +143,7 @@ body .ts-wrap ol li:hover {
 @media (max-height: 620px) {
   body .ts-wrap h1 {
     text-transform: none;
-    font-size: 20px;
+    font-size: 1.2rem;
   }
   body .ts-wrap ol {
     margin-top: 0.4rem;
