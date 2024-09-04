@@ -140,6 +140,8 @@ body .ts-wrap ol {
 }
 
 body .ts-wrap ol li {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
   text-shadow: 0 0 4px #fffde9;
   font-weight: 600;
   font-size: 20px;

@@ -29,7 +29,10 @@ function updateDateTime() {
 updateDateTime();
 setInterval(updateDateTime, 1000);
 
+console.log("## trbo init", jTrbo("li"));
+
 jTrbo("li").on("click", function () {
+    console.log("## click li");
     if (!jTrbo(this).hasClass("strike")) {
         jTrbo(this).addClass("strike");
     } else {
