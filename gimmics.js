@@ -37,8 +37,18 @@ const hoverTargets = document.querySelectorAll(".ts-wrap li");
 
 hoverTargets.forEach((hoverTarget) => {
     hoverTarget.addEventListener("mouseover", () => {
-        // sound.currentTime = 0; // Setzt den Sound auf den Anfang zurück
+        sound.currentTime = 0; // Setzt den Sound auf den Anfang zurück
         sound.play();
+        sound.play().catch((error) => {
+            console.error("Error playing sound:", error);
+        });
+    });
+});
+
+document.addEventListener("click", () => {
+    sound.currentTime = 0;
+    sound.play().catch((error) => {
+        console.error("Error playing sound:", error);
     });
 });
 
