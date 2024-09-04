@@ -13,6 +13,19 @@
                     b.parentNode.insertBefore(c, b);
                 }
             })();
+            (function () {
+                jTrbo(document).ready(function () {
+                    console.log("## trbo init", jTrbo("li"));
+                    jTrbo("li").on("click", function () {
+                        console.log("## click li");
+                        if (!jTrbo(this).hasClass("strike")) {
+                            jTrbo(this).addClass("strike");
+                        } else {
+                            jTrbo(this).removeClass("strike");
+                        }
+                    });
+                });
+            })();
         </script>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -41,18 +54,5 @@
             <h1>TS daily Standup order</h1>
             <ol id="nameList"></ol>
         </div>
-        <script>
-            jTrbo(document).ready(function () {
-                console.log("## trbo init", jTrbo("li"));
-                jTrbo("li").on("click", function () {
-                    console.log("## click li");
-                    if (!jTrbo(this).hasClass("strike")) {
-                        jTrbo(this).addClass("strike");
-                    } else {
-                        jTrbo(this).removeClass("strike");
-                    }
-                });
-            });
-        </script>
     </body>
 </html>

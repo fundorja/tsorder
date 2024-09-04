@@ -32,7 +32,7 @@ setInterval(updateDateTime, 1000);
 // Pfad zur Audio-Datei
 const sound = new Audio("laserShoot1.wav");
 console.log(sound);
-sound.play();
+// sound.play();
 const hoverTargets = document.querySelectorAll(".ts-wrap li");
 
 hoverTargets.forEach((hoverTarget) => {
