@@ -1,18 +1,25 @@
 const sound = new Audio("laserShoot1.wav");
 const powerUpSound = new Audio("powerUp.wav");
 const explosionSound = new Audio("explosion.wav");
+let isClicked = false; // Klick-Status
+
+sound.volume = 0.5;
+powerUpSound.volume = 0.5;
+explosionSound.volume = 0.8;
 
 function addLiClickListeners() {
     const hoverTargets = document.querySelectorAll(".ts-wrap li");
 
     hoverTargets.forEach((hoverTarget) => {
-        hoverTarget.addEventListener("mouseover", () => {
-            sound.currentTime = 0; // Setzt den Sound auf den Anfang zurück
-            sound.play();
-            sound.play().catch((error) => {
-                console.error("Error playing sound:", error);
+        if (isClicked) {
+            hoverTarget.addEventListener("mouseover", () => {
+                sound.currentTime = 0; // Setzt den Sound auf den Anfang zurück
+                sound.play();
+                sound.play().catch((error) => {
+                    console.error("Error playing sound:", error);
+                });
             });
-        });
+        }
 
         hoverTarget.addEventListener("click", () => {
             if (hoverTarget.classList.contains("strike")) {
@@ -31,6 +38,10 @@ function addLiClickListeners() {
         });
     });
 }
+
+document.addEventListener("click", () => {
+    isClicked = true;
+});
 
 fetch("shuffled_names.json")
     .then((response) => response.json())
