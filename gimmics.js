@@ -31,7 +31,7 @@ setInterval(updateDateTime, 1000);
 
 // Pfad zur Audio-Datei
 const sound = new Audio("laserShoot1.wav");
-const hoverTarget = document.querySelector(".hover-target");
+const hoverTarget = document.querySelectorAll(".ts-wrap li");
 hoverTarget.addEventListener("mouseover", () => {
     sound.currentTime = 0; // Setzt den Sound auf den Anfang zurück
     sound.play();
