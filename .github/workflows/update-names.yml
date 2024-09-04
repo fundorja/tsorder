@@ -26,9 +26,9 @@ jobs:
                   node-version: "18" # Oder eine andere unterstützte Version
 
             # Abhängigkeiten installieren (falls erforderlich)
-            - name: Install Dependencies
-              working-directory: ./your-subdirectory # Falls package.json in einem Unterverzeichnis liegt
-              run: npm install
+            #- name: Install Dependencies
+            # working-directory: ./your-subdirectory # Falls package.json in einem Unterverzeichnis liegt
+            # run: npm install
 
             # Namen zufällig sortieren (Dein Node.js Skript ausführen)
             - name: Shuffle Names
