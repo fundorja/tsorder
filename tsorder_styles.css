@@ -1,3 +1,18 @@
+:root {
+  --ratio: 80vh;
+  --bgrad: linear-gradient(35deg, rgba(124, 231, 255, 0.4) 0%, rgba(161, 255, 203, 0.3) 100%);
+  --bgradhov: linear-gradient(35deg, rgba(124, 231, 255, 0.6) 0%, rgba(161, 255, 203, 0.7) 100%);
+  --borders: 1vh solid rgba(255, 255, 255, 0.4);
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito", Arial, sans-serif;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -30,11 +45,25 @@ body #background-video {
 }
 
 body .ts-wrap {
-  background: white;
-  -webkit-filter: blur(1);
-          filter: blur(1);
-  opacity: 0.6;
-  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito", sans-serif;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  background: linear-gradient(35deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.2) 100%);
+  width: 105vh;
+  height: 80vh;
+  border-radius: 2rem;
+  z-index: 20;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  -webkit-box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.1);
+          box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.1);
+  -webkit-transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
+          transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
+  will-change: transform;
 }
 
 body .ts-wrap h1 {

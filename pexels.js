@@ -1,6 +1,6 @@
 const apiKey = "563492ad6f917000010000018eab46c0ee374b6eb502a86a04ce109c";
-/*
-const endpoont = "https://api.pexels.com/v1/curated?per_page=1";
+
+// const endpoont = "https://api.pexels.com/v1/curated?per_page=1";
 // const videoEndpoint = "https://api.pexels.com/videos/videos/";
 const natureEndpoint = "https://api.pexels.com/v1/search?query=nature?curated?per_page=1";
 
@@ -21,8 +21,8 @@ async function setBackground() {
 
 // Rufe das Hintergrundbild ab und setze es
 setBackground();
-*/
 
+/*
 const endpoint = "https://api.pexels.com/videos/search?query=breathtaking&per_page=1";
 
 async function setBackgroundVideo() {
@@ -44,3 +44,4 @@ async function setBackgroundVideo() {
 
 // Rufe das Hintergrundvideo ab und setze es
 setBackgroundVideo();
+*/
