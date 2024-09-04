@@ -7,7 +7,7 @@ sound.volume = 0.5;
 powerUpSound.volume = 0.5;
 explosionSound.volume = 0.8;
 
-function addLiClickListeners() {
+function addLiHover() {
     const nameElements = document.querySelectorAll(".ts-wrap li");
 
     console.log(isClicked);
@@ -18,16 +18,24 @@ function addLiClickListeners() {
                 sound.play();
             });
         }
+    });
+}
+function addLiClickListeners() {
+    const nameElements = document.querySelectorAll(".ts-wrap li");
 
+    nameElements.forEach((name) => {
         name.addEventListener("click", () => {
             isClicked = true;
+            addLiHover();
 
             if (name.classList.contains("strike")) {
                 name.classList.remove("strike");
                 powerUpSound.currentTime = 0;
+                powerUpSound.play();
             } else {
                 name.classList.add("strike");
                 explosionSound.currentTime = 0;
+                explosionSound.play();
             }
         });
     });
@@ -42,8 +50,6 @@ fetch("shuffled_names.json")
             li.textContent = name;
             nameList.appendChild(li);
         });
-
-        console.log("## done");
 
         addLiClickListeners();
     })
