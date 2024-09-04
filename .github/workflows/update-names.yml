@@ -6,9 +6,9 @@ name: Update Name List
 on:
     schedule:
         # 1 minute nach commit #
-        - cron: "*/1 * * * *"
+        # - cron: "*/1 * * * *"
 
-        #  - cron: "22 14 * * 1-5"
+        - cron: "0 03 * * 1-5"
 
 jobs:
     update-names:
