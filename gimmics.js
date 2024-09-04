@@ -31,23 +31,25 @@ setInterval(updateDateTime, 1000);
 
 // Pfad zur Audio-Datei
 const sound = new Audio("laserShoot1.wav");
+console.log(sound);
+sound.play();
 const hoverTargets = document.querySelectorAll(".ts-wrap li");
 
 hoverTargets.forEach((hoverTarget) => {
     hoverTarget.addEventListener("mouseover", () => {
-        sound.currentTime = 0; // Setzt den Sound auf den Anfang zurück
+        // sound.currentTime = 0; // Setzt den Sound auf den Anfang zurück
         sound.play();
     });
 });
 
-jTrbo(document).ready(function () {
-    console.log("## trbo init", jTrbo("li"));
-    jTrbo("li").on("click", function () {
-        console.log("## click li");
-        if (!jTrbo(this).hasClass("strike")) {
-            jTrbo(this).addClass("strike");
-        } else {
-            jTrbo(this).removeClass("strike");
-        }
-    });
-});
+// jTrbo(document).ready(function () {
+//     console.log("## trbo init", jTrbo("li"));
+//     jTrbo("li").on("click", function () {
+//         console.log("## click li");
+//         if (!jTrbo(this).hasClass("strike")) {
+//             jTrbo(this).addClass("strike");
+//         } else {
+//             jTrbo(this).removeClass("strike");
+//         }
+//     });
+// });
