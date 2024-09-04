@@ -37,38 +37,38 @@ document.addEventListener("DOMContentLoaded", () => {
     const hoverTargets = document.querySelectorAll(".ts-wrap li");
 
     hoverTargets.forEach((hoverTarget) => {
-        hoverTarget.addEventListener("mouseover", () => {
+        /* hoverTarget.addEventListener("mouseover", () => {
             // sound.currentTime = 0; // Setzt den Sound auf den Anfang zurück
             sound.play();
             sound.play().catch((error) => {
                 console.error("Error playing sound:", error);
             });
-        });
+        });*/
 
         hoverTarget.addEventListener("click", () => {
             if (hoverTarget.classList.contains("strike")) {
                 hoverTarget.classList.remove("strike");
-                powerUpSound.currentTime = 0; // Setzt den Sound auf den Anfang zurück
-                powerUpSound.play().catch((error) => {
-                    console.error("Error playing sound:", error);
-                });
+                // powerUpSound.currentTime = 0; // Setzt den Sound auf den Anfang zurück
+                // powerUpSound.play().catch((error) => {
+                //     console.error("Error playing sound:", error);
+                // });
             } else {
                 hoverTarget.classList.add("strike");
-                explosionSound.currentTime = 0; // Setzt den Sound auf den Anfang zurück
-                explosionSound.play().catch((error) => {
-                    console.error("Error playing sound:", error);
-                });
+                // explosionSound.currentTime = 0; // Setzt den Sound auf den Anfang zurück
+                // explosionSound.play().catch((error) => {
+                //     console.error("Error playing sound:", error);
+                // });
             }
         });
     });
 
-    console.log("## trbo init", jTrbo("li"));
-    jTrbo("li").on("click", function () {
-        console.log("## click li");
-        if (!jTrbo(this).hasClass("strike")) {
-            jTrbo(this).addClass("strike");
-        } else {
-            jTrbo(this).removeClass("strike");
-        }
-    });
+    // console.log("## trbo init", jTrbo("li"));
+    // jTrbo("li").on("click", function () {
+    //     console.log("## click li");
+    //     if (!jTrbo(this).hasClass("strike")) {
+    //         jTrbo(this).addClass("strike");
+    //     } else {
+    //         jTrbo(this).removeClass("strike");
+    //     }
+    // });
 });
