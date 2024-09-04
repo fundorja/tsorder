@@ -29,46 +29,46 @@ function updateDateTime() {
 updateDateTime();
 setInterval(updateDateTime, 1000);
 
-const sound = new Audio("laserShoot1.wav");
-const powerUpSound = new Audio("powerUp.wav");
-const explosionSound = new Audio("explosion.wav");
+document.addEventListener("DOMContentLoaded", () => {
+    const sound = new Audio("laserShoot1.wav");
+    const powerUpSound = new Audio("powerUp.wav");
+    const explosionSound = new Audio("explosion.wav");
 
-const hoverTargets = document.querySelectorAll(".ts-wrap li");
+    const hoverTargets = document.querySelectorAll(".ts-wrap li");
 
-hoverTargets.forEach((hoverTarget) => {
-    hoverTarget.addEventListener("mouseover", () => {
-        // sound.currentTime = 0; // Setzt den Sound auf den Anfang zurück
-        sound.play();
-        sound.play().catch((error) => {
-            console.error("Error playing sound:", error);
+    hoverTargets.forEach((hoverTarget) => {
+        hoverTarget.addEventListener("mouseover", () => {
+            // sound.currentTime = 0; // Setzt den Sound auf den Anfang zurück
+            sound.play();
+            sound.play().catch((error) => {
+                console.error("Error playing sound:", error);
+            });
+        });
+
+        hoverTarget.addEventListener("click", () => {
+            if (hoverTarget.classList.contains("strike")) {
+                hoverTarget.classList.remove("strike");
+                powerUpSound.currentTime = 0; // Setzt den Sound auf den Anfang zurück
+                powerUpSound.play().catch((error) => {
+                    console.error("Error playing sound:", error);
+                });
+            } else {
+                hoverTarget.classList.add("strike");
+                explosionSound.currentTime = 0; // Setzt den Sound auf den Anfang zurück
+                explosionSound.play().catch((error) => {
+                    console.error("Error playing sound:", error);
+                });
+            }
         });
     });
 
-    hoverTarget.addEventListener("click", () => {
-        if (hoverTarget.classList.contains("strike")) {
-            hoverTarget.classList.remove("strike");
-            powerUpSound.currentTime = 0; // Setzt den Sound auf den Anfang zurück
-            powerUpSound.play().catch((error) => {
-                console.error("Error playing sound:", error);
-            });
+    console.log("## trbo init", jTrbo("li"));
+    jTrbo("li").on("click", function () {
+        console.log("## click li");
+        if (!jTrbo(this).hasClass("strike")) {
+            jTrbo(this).addClass("strike");
         } else {
-            hoverTarget.classList.add("strike");
-            explosionSound.currentTime = 0; // Setzt den Sound auf den Anfang zurück
-            explosionSound.play().catch((error) => {
-                console.error("Error playing sound:", error);
-            });
+            jTrbo(this).removeClass("strike");
         }
     });
 });
-
-// jTrbo(document).ready(function () {
-//     console.log("## trbo init", jTrbo("li"));
-//     jTrbo("li").on("click", function () {
-//         console.log("## click li");
-//         if (!jTrbo(this).hasClass("strike")) {
-//             jTrbo(this).addClass("strike");
-//         } else {
-//             jTrbo(this).removeClass("strike");
-//         }
-//     });
-// });
