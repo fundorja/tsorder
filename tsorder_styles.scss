@@ -40,6 +40,10 @@ body {
         margin: 0.5rem;
         font-size: 1.5rem;
         line-height: 1.5;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
         .date {
             font-size: 1.5rem;
@@ -52,10 +56,6 @@ body {
     }
 
     .ts-wrap {
-        // --ratio: 80vh;
-        // --bgrad: linear-gradient(35deg, rgba(124, 231, 255, 0.4) 0%, rgba(161, 255, 203, 0.3) 100%);
-        // --bgradhov: linear-gradient(35deg, rgba(124, 231, 255, 0.6) 0%, rgba(161, 255, 203, 0.7) 100%);
-        // --borders: 1vh solid rgba(255, 255, 255, 0.4);
         box-sizing: border-box;
         margin: 0 0 2rem;
         padding: 2rem;
@@ -79,7 +79,6 @@ body {
         h1 {
             position: relative;
             z-index: 1;
-            text-shadow: 0 0 5px rgb(255, 253, 233);
             text-transform: uppercase;
             text-align: center;
             font-size: 2rem;
@@ -102,7 +101,6 @@ body {
 
                 &:hover {
                     text-shadow: 0 0 3px rgba(0, 174, 254, 0.5);
-                    text-decoration: underline;
                 }
             }
         }

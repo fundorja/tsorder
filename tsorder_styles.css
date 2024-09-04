@@ -53,6 +53,19 @@ body .date-box {
   margin: 0.5rem;
   font-size: 1.5rem;
   line-height: 1.5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body .date-box .date {
@@ -103,7 +116,6 @@ body .ts-wrap {
 body .ts-wrap h1 {
   position: relative;
   z-index: 1;
-  text-shadow: 0 0 5px #fffde9;
   text-transform: uppercase;
   text-align: center;
   font-size: 2rem;
@@ -137,7 +149,6 @@ body .ts-wrap ol li {
 
 body .ts-wrap ol li:hover {
   text-shadow: 0 0 3px rgba(0, 174, 254, 0.5);
-  text-decoration: underline;
 }
 
 @media (max-height: 620px) {
