@@ -502,9 +502,9 @@ VanillaTilt.init(document.querySelector(".ts-wrap"), {
     glare: false,
 });
 
-VanillaTilt.init(document.querySelectorAll("li"), {
-    scale: 1.05,
-    max: 5,
-    speed: 300,
-    glare: false,
-});
+// VanillaTilt.init(document.querySelectorAll("li"), {
+//     scale: 1.05,
+//     max: 5,
+//     speed: 300,
+//     glare: false,
+// });

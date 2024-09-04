@@ -82,7 +82,7 @@ body .ts-wrap {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0 0 2rem;
-  padding: 2rem;
+  padding: 1.5rem 1rem 2rem;
   font-family: "Nunito", sans-serif;
   border-top: 1px solid rgba(255, 255, 255, 0.4);
   border-left: 1px solid rgba(255, 255, 255, 0.4);
@@ -150,6 +150,8 @@ body .ts-wrap ol li {
 
 body .ts-wrap ol li:hover {
   text-shadow: 0 0 2px #3dc2ff;
+  -webkit-transform: scale(1.04);
+          transform: scale(1.04);
 }
 
 @media (max-height: 620px) {
