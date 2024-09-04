@@ -9,10 +9,33 @@ body {
     background-position: center;
     color: white;
     font-family: Arial, sans-serif;
+    position: relative;
 
-    ol {
-        li {
-            list-style-type: none;
+    #background-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    .ts-wrap {
+        background: white;
+        filter: blur(1);
+        opacity: 0.6;
+        position: relative;
+
+        h1 {
+            position: relative;
+            z-index: 1;
+        }
+
+        ol {
+            li {
+                list-style-type: none;
+            }
         }
     }
 }
