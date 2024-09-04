@@ -30,6 +30,9 @@ updateDateTime();
 setInterval(updateDateTime, 1000);
 
 const sound = new Audio("laserShoot1.wav");
+const powerUpSound = new Audio("powerUp.wav");
+const explosionSound = new Audio("explosion.wav");
+
 const hoverTargets = document.querySelectorAll(".ts-wrap li");
 
 hoverTargets.forEach((hoverTarget) => {
@@ -42,17 +45,14 @@ hoverTargets.forEach((hoverTarget) => {
     });
 
     hoverTarget.addEventListener("click", () => {
-        // Toggle der Klasse .strike
         if (hoverTarget.classList.contains("strike")) {
             hoverTarget.classList.remove("strike");
-            // Wenn die Klasse entfernt wird, spiele den powerUp-Sound ab
             powerUpSound.currentTime = 0; // Setzt den Sound auf den Anfang zurück
             powerUpSound.play().catch((error) => {
                 console.error("Error playing sound:", error);
             });
         } else {
             hoverTarget.classList.add("strike");
-            // Wenn die Klasse hinzugefügt wird, spiele den explosion-Sound ab
             explosionSound.currentTime = 0; // Setzt den Sound auf den Anfang zurück
             explosionSound.play().catch((error) => {
                 console.error("Error playing sound:", error);
