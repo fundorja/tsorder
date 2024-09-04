@@ -35,11 +35,9 @@ jobs:
 
             # Änderungen committen und pushen
             - name: Commit and Push Changes
-              env:
-                  PAT: ${{ secrets.tsorder }} # Dein persönliches Zugriffstoken
               run: |
                   git config --local user.email "action@github.com"
                   git config --local user.name "GitHub Action"
                   git add shuffled_names.json
                   git commit -m "Updated shuffled names"
-                  git push https://$PAT@github.com/${{ github.repository }} HEAD:${{ github.ref }}
+                  git push
