@@ -1,39 +1,31 @@
 const sound = new Audio("laserShoot1.wav");
 const powerUpSound = new Audio("powerUp.wav");
 const explosionSound = new Audio("explosion.wav");
-let isClicked = false; // Klick-Status
+let isClicked = false;
 
 sound.volume = 0.5;
 powerUpSound.volume = 0.5;
 explosionSound.volume = 0.8;
 
 function addLiClickListeners() {
-    const hoverTargets = document.querySelectorAll(".ts-wrap li");
+    const nameElements = document.querySelectorAll(".ts-wrap li");
 
-    hoverTargets.forEach((hoverTarget) => {
+    console.log(isClicked);
+    nameElements.forEach((name) => {
         if (isClicked) {
-            hoverTarget.addEventListener("mouseover", () => {
-                sound.currentTime = 0; // Setzt den Sound auf den Anfang zurück
+            name.addEventListener("mouseover", () => {
+                sound.currentTime = 0;
                 sound.play();
-                sound.play().catch((error) => {
-                    console.error("Error playing sound:", error);
-                });
             });
         }
 
-        hoverTarget.addEventListener("click", () => {
-            if (hoverTarget.classList.contains("strike")) {
-                hoverTarget.classList.remove("strike");
-                powerUpSound.currentTime = 0; // Setzt den Sound auf den Anfang zurück
-                powerUpSound.play().catch((error) => {
-                    console.error("Error playing sound:", error);
-                });
+        name.addEventListener("click", () => {
+            if (name.classList.contains("strike")) {
+                name.classList.remove("strike");
+                powerUpSound.currentTime = 0;
             } else {
-                hoverTarget.classList.add("strike");
-                explosionSound.currentTime = 0; // Setzt den Sound auf den Anfang zurück
-                explosionSound.play().catch((error) => {
-                    console.error("Error playing sound:", error);
-                });
+                name.classList.add("strike");
+                explosionSound.currentTime = 0;
             }
         });
     });
