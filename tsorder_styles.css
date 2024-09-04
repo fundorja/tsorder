@@ -149,9 +149,9 @@ body .ts-wrap ol li {
 }
 
 body .ts-wrap ol li:hover {
-  text-shadow: 0 0 2px #3dc2ff;
-  -webkit-transform: scale(1.04);
-          transform: scale(1.04);
+  text-shadow: 0 0 6px #fffefa;
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
 }
 
 @media (max-height: 620px) {
