@@ -82,6 +82,7 @@ body {
             text-transform: uppercase;
             text-align: center;
             font-size: 2rem;
+            text-shadow: 0 0 10px rgb(255, 253, 233);
         }
 
         ol {
@@ -92,7 +93,7 @@ body {
             justify-content: center;
 
             li {
-                text-shadow: 0 0 2px rgb(255, 253, 233);
+                text-shadow: 0 0 4px rgb(255, 253, 233);
                 font-weight: 600;
                 font-size: 20px;
                 line-height: 1.4;
@@ -100,7 +101,7 @@ body {
                 cursor: pointer;
 
                 &:hover {
-                    text-shadow: 0 0 3px rgba(0, 174, 254, 0.5);
+                    text-shadow: 0 0 2px rgb(61, 194, 255);
                 }
             }
         }

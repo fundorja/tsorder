@@ -119,6 +119,7 @@ body .ts-wrap h1 {
   text-transform: uppercase;
   text-align: center;
   font-size: 2rem;
+  text-shadow: 0 0 10px #fffde9;
 }
 
 body .ts-wrap ol {
@@ -139,7 +140,7 @@ body .ts-wrap ol {
 }
 
 body .ts-wrap ol li {
-  text-shadow: 0 0 2px #fffde9;
+  text-shadow: 0 0 4px #fffde9;
   font-weight: 600;
   font-size: 20px;
   line-height: 1.4;
@@ -148,7 +149,7 @@ body .ts-wrap ol li {
 }
 
 body .ts-wrap ol li:hover {
-  text-shadow: 0 0 3px rgba(0, 174, 254, 0.5);
+  text-shadow: 0 0 2px #3dc2ff;
 }
 
 @media (max-height: 620px) {
