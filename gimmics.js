@@ -30,6 +30,7 @@ updateDateTime();
 setInterval(updateDateTime, 1000);
 
 document.addEventListener("DOMContentLoaded", () => {
+    console.log("## 1 loaded");
     const sound = new Audio("laserShoot1.wav");
     const powerUpSound = new Audio("powerUp.wav");
     const explosionSound = new Audio("explosion.wav");
@@ -37,27 +38,29 @@ document.addEventListener("DOMContentLoaded", () => {
     const hoverTargets = document.querySelectorAll(".ts-wrap li");
 
     hoverTargets.forEach((hoverTarget) => {
-        /* hoverTarget.addEventListener("mouseover", () => {
-            // sound.currentTime = 0; // Setzt den Sound auf den Anfang zurück
+        hoverTarget.addEventListener("mouseover", () => {
+            console.log("## 2 hover");
+            sound.currentTime = 0; // Setzt den Sound auf den Anfang zurück
             sound.play();
             sound.play().catch((error) => {
                 console.error("Error playing sound:", error);
             });
-        });*/
+        });
 
         hoverTarget.addEventListener("click", () => {
+            console.log("## 3 click");
             if (hoverTarget.classList.contains("strike")) {
                 hoverTarget.classList.remove("strike");
-                // powerUpSound.currentTime = 0; // Setzt den Sound auf den Anfang zurück
-                // powerUpSound.play().catch((error) => {
-                //     console.error("Error playing sound:", error);
-                // });
+                powerUpSound.currentTime = 0; // Setzt den Sound auf den Anfang zurück
+                powerUpSound.play().catch((error) => {
+                    console.error("Error playing sound:", error);
+                });
             } else {
                 hoverTarget.classList.add("strike");
-                // explosionSound.currentTime = 0; // Setzt den Sound auf den Anfang zurück
-                // explosionSound.play().catch((error) => {
-                //     console.error("Error playing sound:", error);
-                // });
+                explosionSound.currentTime = 0; // Setzt den Sound auf den Anfang zurück
+                explosionSound.play().catch((error) => {
+                    console.error("Error playing sound:", error);
+                });
             }
         });
     });
