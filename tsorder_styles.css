@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+body ol li {
+  list-style-type: none;
+}
+/*# sourceMappingURL=tsorder_styles.css.map */

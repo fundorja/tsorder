@@ -13,7 +13,7 @@ function shuffleArray(array) {
 
 shuffleArray(names);
 
-console.log("Shuffled names:", names);
+// console.log("Shuffled names:", names);
 
 // Die gemischte Liste als neue JSON-Datei speichern
 fs.writeFileSync("shuffled_names.json", JSON.stringify(names));

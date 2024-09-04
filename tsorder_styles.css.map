@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,IAAI,CAAC;EACD,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,MAAM,EAAE,KAAK;EACb,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM;EACnB,eAAe,EAAE,KAAK;EACtB,mBAAmB,EAAE,MAAM;EAC3B,KAAK,EAAE,KAAK;EACZ,WAAW,EAAE,iBAAiB;CAOjC;;AAjBD,AAaQ,IAbJ,CAYA,EAAE,CACE,EAAE,CAAC;EACC,eAAe,EAAE,IAAI;CACxB",
+    "sources": [
+        "tsorder_styles.scss"
+    ],
+    "names": [],
+    "file": "tsorder_styles.css"
+}
