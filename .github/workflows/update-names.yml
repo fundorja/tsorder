@@ -1,9 +1,10 @@
 name: Update Name List
 
-# Der Workflow wird täglich um 03:00 Uhr CET ausgeführt
+# Der Workflow wird täglich um xx Uhr CET ausgeführt
+# - cron: Minuten Stunde Tag Montag Wochentag
 on:
     schedule:
-        - cron: "0 3 * * *"
+        - cron: "59 14 * * 1-5"
 
 jobs:
     update-names:
