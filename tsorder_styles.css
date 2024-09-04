@@ -16,7 +16,7 @@
 
 body {
   margin: 0;
-  padding: 0;
+  padding: 0 0 1rem;
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -50,7 +50,7 @@ body #background-video {
 }
 
 body .date-box {
-  margin: 0.5rem;
+  margin: 0.2rem;
   font-size: 1.5rem;
   line-height: 1.5;
   display: -webkit-box;
