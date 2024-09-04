@@ -27,6 +27,7 @@ jobs:
 
             # Abhängigkeiten installieren (falls erforderlich)
             - name: Install Dependencies
+              working-directory: ./your-subdirectory # Falls package.json in einem Unterverzeichnis liegt
               run: npm install
 
             # Namen zufällig sortieren (Dein Node.js Skript ausführen)
