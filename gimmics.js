@@ -29,10 +29,7 @@ function updateDateTime() {
 updateDateTime();
 setInterval(updateDateTime, 1000);
 
-// Pfad zur Audio-Datei
 const sound = new Audio("laserShoot1.wav");
-console.log(sound);
-// sound.play();
 const hoverTargets = document.querySelectorAll(".ts-wrap li");
 
 hoverTargets.forEach((hoverTarget) => {
@@ -54,7 +51,7 @@ hoverTargets.forEach((hoverTarget) => {
         });
     } else {
         hoverTarget.classList.add("strike");
-        // explosionSound.currentTime = 0;
+        explosionSound.currentTime = 0;
         explosionSound.play().catch((error) => {
             console.error("Error playing sound:", error);
         });
