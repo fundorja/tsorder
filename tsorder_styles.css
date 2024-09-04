@@ -70,10 +70,11 @@ body .ts-wrap {
 body .ts-wrap h1 {
   position: relative;
   z-index: 1;
-  text-shadow: 3px 3px 0px white;
+  text-shadow: 0 0 5px white;
 }
 
 body .ts-wrap ol li {
-  text-shadow: 3px 3px 0px white;
+  text-shadow: 0 0 2px white;
+  font-weight: 600;
 }
 /*# sourceMappingURL=tsorder_styles.css.map */

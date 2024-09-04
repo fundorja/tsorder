@@ -60,12 +60,13 @@ body {
         h1 {
             position: relative;
             z-index: 1;
-            text-shadow: 3px 3px 0px white;
+            text-shadow: 0 0 5px white;
         }
 
         ol {
             li {
-                text-shadow: 3px 3px 0px white;
+                text-shadow: 0 0 2px white;
+                font-weight: 600;
             }
         }
     }
