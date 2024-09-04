@@ -37,13 +37,14 @@ hoverTarget.addEventListener("mouseover", () => {
     sound.play();
 });
 
-console.log("## trbo init", jTrbo("li"));
-
-jTrbo("li").on("click", function () {
-    console.log("## click li");
-    if (!jTrbo(this).hasClass("strike")) {
-        jTrbo(this).addClass("strike");
-    } else {
-        jTrbo(this).removeClass("strike");
-    }
+jTrbo(document).ready(function () {
+    console.log("## trbo init", jTrbo("li"));
+    jTrbo("li").on("click", function () {
+        console.log("## click li");
+        if (!jTrbo(this).hasClass("strike")) {
+            jTrbo(this).addClass("strike");
+        } else {
+            jTrbo(this).removeClass("strike");
+        }
+    });
 });
