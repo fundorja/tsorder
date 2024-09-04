@@ -3,7 +3,7 @@ const powerUpSound = new Audio("powerUp.wav");
 const explosionSound = new Audio("explosion.wav");
 let isClicked = false;
 
-sound.volume = 0.5;
+sound.volume = 0.4;
 powerUpSound.volume = 0.5;
 explosionSound.volume = 0.8;
 
