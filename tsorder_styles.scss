@@ -82,9 +82,10 @@ body {
                 font-size: 20px;
                 line-height: 1.4;
                 text-decoration: none;
+                cursor: pointer;
 
                 &:hover {
-                    text-shadow: 0 0 4px #00affe;
+                    text-shadow: 0 0 3px rgba(0, 174, 254, 0.5);
                     text-decoration: underline;
                 }
             }
@@ -92,7 +93,7 @@ body {
     }
 }
 
-@media (min-height: 630px) {
+@media (max-height: 620px) {
     body {
         .ts-wrap {
             h1 {
