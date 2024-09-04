@@ -31,10 +31,6 @@ function addLiClickListeners() {
     });
 }
 
-document.addEventListener("click", () => {
-    isClicked = true;
-});
-
 fetch("shuffled_names.json")
     .then((response) => response.json())
     .then((data) => {
@@ -45,6 +41,14 @@ fetch("shuffled_names.json")
             nameList.appendChild(li);
         });
 
+        console.log("## done");
+
         addLiClickListeners();
+
+        document.addEventListener("click", () => {
+            isClicked = true;
+
+            addLiClickListeners();
+        });
     })
     .catch((error) => console.error("Fehler beim Laden der Namensliste:", error));
