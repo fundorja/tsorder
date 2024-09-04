@@ -4,7 +4,7 @@ const apiKey = "563492ad6f917000010000018eab46c0ee374b6eb502a86a04ce109c";
 // const videoEndpoint = "https://api.pexels.com/videos/videos/";
 // const natureEndpoint = "https://api.pexels.com/v1/search?query=breathtaking?per_page=1";
 const query = "breathtaking";
-const totalPages = 768;
+const totalPages = 368;
 
 function getRandomPage() {
     return Math.floor(Math.random() * totalPages) + 1;
