@@ -20,6 +20,8 @@ function addLiClickListeners() {
         }
 
         name.addEventListener("click", () => {
+            isClicked = true;
+
             if (name.classList.contains("strike")) {
                 name.classList.remove("strike");
                 powerUpSound.currentTime = 0;
@@ -44,11 +46,5 @@ fetch("shuffled_names.json")
         console.log("## done");
 
         addLiClickListeners();
-
-        document.addEventListener("click", () => {
-            isClicked = true;
-
-            addLiClickListeners();
-        });
     })
     .catch((error) => console.error("Fehler beim Laden der Namensliste:", error));
