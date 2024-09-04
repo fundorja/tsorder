@@ -1,16 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>TS Order Daily</title>
-        <script type="module" src="/orderRandomizer.js" defer></script>
-        <!-- Firebase App (the core Firebase SDK) -->
-        <!-- <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script> -->
-        <!-- Firebase Realtime Database -->
-        <!-- <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script> -->
+        <title>Name List</title>
     </head>
     <body>
-        <h1>TS Order</h1>
+        <h1>Tägliche Namensliste</h1>
+        <ol id="nameList"></ol>
+
+        <script>
+            // Lade die zufällige Namensliste
+            fetch("shuffled_names.json")
+                .then((response) => response.json())
+                .then((data) => {
+                    const nameList = document.getElementById("nameList");
+                    data.forEach((name) => {
+                        const li = document.createElement("li");
+                        li.textContent = name;
+                        nameList.appendChild(li);
+                    });
+                })
+                .catch((error) => console.error("Fehler beim Laden der Namensliste:", error));
+        </script>
     </body>
 </html>

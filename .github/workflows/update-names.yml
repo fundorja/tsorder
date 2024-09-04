@@ -1,0 +1,38 @@
+name: Update Name List
+
+# Der Workflow wird täglich um 03:00 Uhr CET ausgeführt
+on:
+    schedule:
+        - cron: "0 3 * * *"
+
+jobs:
+    update-names:
+        runs-on: ubuntu-latest
+
+        steps:
+            # Repository klonen
+            - name: Checkout Repository
+              uses: actions/checkout@v2
+
+            # Node.js einrichten
+            - name: Set up Node.js
+              uses: actions/setup-node@v2
+              with:
+                  node-version: "14"
+
+            # Abhängigkeiten installieren (falls erforderlich)
+            - name: Install Dependencies
+              run: npm install
+
+            # Namen zufällig sortieren (Dein Node.js Skript ausführen)
+            - name: Shuffle Names
+              run: node shuffle_names.js
+
+            # Änderungen committen und pushen
+            - name: Commit and Push Changes
+              run: |
+                  git config --local user.email "action@github.com"
+                  git config --local user.name "GitHub Action"
+                  git add shuffled_names.json
+                  git commit -m "Updated shuffled names"
+                  git push
