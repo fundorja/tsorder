@@ -4,11 +4,15 @@ function updateDateTime() {
 
     const now = new Date();
 
+    // Wochentag ermitteln
+    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const dayOfWeek = daysOfWeek[now.getDay()];
+
     // Datum formatieren: Tag.Monat.Jahr
     const day = String(now.getDate()).padStart(2, "0");
     const month = String(now.getMonth() + 1).padStart(2, "0"); // Monat wird 0-basiert gezählt, daher +1
     const year = now.getFullYear();
-    const formattedDate = `${day}.${month}.${year}`;
+    const formattedDate = `${dayOfWeek} ${day}.${month}.${year}`;
 
     // Zeit formatieren: Stunden:Minuten:Sekunden
     const hours = String(now.getHours()).padStart(2, "0");
