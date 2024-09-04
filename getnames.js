@@ -1,4 +1,4 @@
-const sound = new Audio("laserShoot1.wav");
+const sound = new Audio("pickupCoin.wav");
 const powerUpSound = new Audio("powerUp.wav");
 const explosionSound = new Audio("explosion.wav");
 let isClicked = false;
