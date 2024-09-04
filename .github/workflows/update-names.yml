@@ -17,13 +17,13 @@ jobs:
         steps:
             # Repository klonen
             - name: Checkout Repository
-              uses: actions/checkout@v2
+              uses: actions/checkout@v3 # Update auf die neueste Version
 
             # Node.js einrichten
             - name: Set up Node.js
-              uses: actions/setup-node@v2
+              uses: actions/setup-node@v3 # Update auf die neueste Version
               with:
-                  node-version: "14"
+                  node-version: "18" # Oder eine andere unterstützte Version
 
             # Abhängigkeiten installieren (falls erforderlich)
             - name: Install Dependencies
