@@ -11,6 +11,7 @@
   margin: 0;
   padding: 0;
   font-family: "Nunito", Arial, sans-serif;
+  color: black;
 }
 
 body {
@@ -69,9 +70,10 @@ body .ts-wrap {
 body .ts-wrap h1 {
   position: relative;
   z-index: 1;
+  text-shadow: 3px 3px 0px white;
 }
 
 body .ts-wrap ol li {
-  list-style-type: none;
+  text-shadow: 3px 3px 0px white;
 }
 /*# sourceMappingURL=tsorder_styles.css.map */
