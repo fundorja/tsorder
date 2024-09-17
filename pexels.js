@@ -53,7 +53,7 @@ function checkImage(url) {
                 document.querySelectorAll(".ts-wrap li").forEach((name) => {
                     name.classList.add("darkBG");
                 });
-                console.log("## dunkel");
+                console.log("## dunkel 1");
             } else {
                 document.querySelector(".date").style.color = "black";
                 document.querySelector(".time").style.color = "black";
@@ -62,7 +62,7 @@ function checkImage(url) {
                 document.querySelectorAll(".ts-wrap li").forEach((name) => {
                     name.classList.remove("darkBG");
                 });
-                console.log("## hell");
+                console.log("## hell 1");
             }
         });
     };
