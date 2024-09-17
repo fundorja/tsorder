@@ -1,11 +1,11 @@
-const sound = new Audio("pickupCoin.wav");
-const powerUpSound = new Audio("powerUp.wav");
-const explosionSound = new Audio("explosion.wav");
+const hoverSound = new Audio("pickupCoin.wav");
+const strokeSound = new Audio("chalkScratch.wav");
+const unstrokeSound = new Audio("childLaugh.wav");
 let isClicked = false;
 
-sound.volume = 0.2;
-powerUpSound.volume = 0.3;
-explosionSound.volume = 0.4;
+hoverSound.volume = 0.1;
+strokeSound.volume = 0.6;
+unstrokeSound.volume = 0.2;
 
 function addLiHover() {
     const nameElements = document.querySelectorAll(".ts-wrap li");
@@ -14,8 +14,8 @@ function addLiHover() {
     nameElements.forEach((name) => {
         if (isClicked) {
             name.addEventListener("mouseover", () => {
-                sound.currentTime = 0;
-                sound.play();
+                hoverSound.currentTime = 0;
+                hoverSound.play();
             });
         }
     });
@@ -30,12 +30,12 @@ function addLiClickListeners() {
 
             if (name.classList.contains("strike")) {
                 name.classList.remove("strike");
-                powerUpSound.currentTime = 0;
-                powerUpSound.play();
+                unstrokeSound.currentTime = 0;
+                unstrokeSound.play();
             } else {
                 name.classList.add("strike");
-                explosionSound.currentTime = 0;
-                explosionSound.play();
+                strokeSound.currentTime = 0;
+                strokeSound.play();
             }
         });
     });
