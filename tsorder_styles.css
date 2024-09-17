@@ -6,8 +6,7 @@
 }
 
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: "Nunito", Arial, sans-serif;
@@ -18,27 +17,20 @@ body {
   margin: 0;
   padding: 0 0 1rem;
   height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-size: cover;
   background-position: center;
   color: white;
   font-family: Arial, sans-serif;
   position: relative;
 }
-
-body #background-video {
+body .ts-outside-wrap {
+  transform: scale(1.2);
+}
+body .ts-outside-wrap #background-video {
   position: absolute;
   top: 0;
   left: 0;
@@ -48,41 +40,27 @@ body #background-video {
      object-fit: cover;
   z-index: -1;
 }
-
-body .date-box {
+body .ts-outside-wrap .date-box {
   margin: 0.2rem;
   font-size: 1.5rem;
-  line-height: 1.5;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  line-height: 1.2;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
-body .date-box .date {
+body .ts-outside-wrap .date-box .date {
   font-size: 1.5rem;
   color: rgba(0, 0, 0, 0.8);
 }
-
-body .date-box .time {
+body .ts-outside-wrap .date-box .time {
   font-size: 1.2rem;
   color: rgba(0, 0, 0, 0.6);
 }
-
-body .ts-wrap {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+body .ts-outside-wrap .ts-wrap {
+  box-sizing: border-box;
   margin: 0 0 2rem;
-  padding: 1.5rem 1rem 2rem;
+  padding: 1rem 1rem 1.2rem;
   font-family: "Nunito", sans-serif;
   border-top: 1px solid rgba(255, 255, 255, 0.3);
   border-left: 1px solid rgba(255, 255, 255, 0.3);
@@ -93,113 +71,81 @@ body .ts-wrap {
   z-index: 20;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
-  -webkit-box-shadow: 2px 2px 30px rgba(0, 22, 41, 0.3);
-          box-shadow: 2px 2px 30px rgba(0, 22, 41, 0.3);
-  -webkit-transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
-          transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
+  box-shadow: 2px 2px 30px rgba(0, 22, 41, 0.3);
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
   will-change: transform;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 2vh;
 }
-
-body .ts-wrap.darkBG {
+body .ts-outside-wrap .ts-wrap.darkBG {
   background: linear-gradient(35deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.3) 100%);
 }
-
-body .ts-wrap h1 {
+body .ts-outside-wrap .ts-wrap h1 {
   position: relative;
   z-index: 1;
   text-transform: uppercase;
   text-align: center;
-  font-size: 2rem;
-  text-shadow: 0 0 10px #fffde9;
+  font-size: 2.5em;
+  text-shadow: 0 0 10px rgb(255, 253, 233);
   color: black;
 }
-
-body .ts-wrap h1.darkBG {
+body .ts-outside-wrap .ts-wrap h1.darkBG {
   color: white;
-  text-shadow: 0 0 10px #070700;
+  text-shadow: 0 0 10px rgb(7, 7, 0);
 }
-
-body .ts-wrap ol {
-  margin-top: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
+body .ts-outside-wrap .ts-wrap ol {
+  margin-top: 1.2rem;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-
-body .ts-wrap ol li {
+body .ts-outside-wrap .ts-wrap ol li {
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
-  -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  text-shadow: 0 0 4px #fffde9;
+  text-shadow: 0 0 4px rgb(255, 253, 233);
   font-weight: 600;
-  font-size: 20px;
+  font-size: 1.5em;
   line-height: 1.4;
   text-decoration: none;
   cursor: pointer;
   color: black;
 }
-
-body .ts-wrap ol li.strike {
+body .ts-outside-wrap .ts-wrap ol li.strike {
   text-decoration: line-through;
   color: rgba(0, 0, 0, 0.4);
 }
-
-body .ts-wrap ol li:hover {
-  text-shadow: 0 0 6px #fffefa;
-  -webkit-transform: scale(1.03);
-          transform: scale(1.03);
+body .ts-outside-wrap .ts-wrap ol li:hover {
+  text-shadow: 0 0 6px rgb(255, 254, 250);
+  transform: scale(1.03);
 }
-
-body .ts-wrap ol li.darkBG {
+body .ts-outside-wrap .ts-wrap ol li.darkBG {
   color: white;
-  text-shadow: 0 0 4px #0b0a00;
+  text-shadow: 0 0 4px rgb(11, 10, 0);
 }
-
-body .ts-wrap ol li.darkBG.strike {
+body .ts-outside-wrap .ts-wrap ol li.darkBG.strike {
   color: rgba(255, 255, 255, 0.4);
 }
-
-body .ts-wrap ol li.darkBG:hover {
-  text-shadow: 0 0 6px #050400;
+body .ts-outside-wrap .ts-wrap ol li.darkBG:hover {
+  text-shadow: 0 0 6px rgb(5, 4, 0);
 }
 
-@media (max-height: 620px) {
-  body .ts-wrap h1 {
-    text-transform: none;
-    font-size: 1.2rem;
+@media (max-height: 750px) {
+  body .ts-outside-wrap {
+    transform: scale(1.1);
   }
-  body .ts-wrap ol {
+  body .ts-outside-wrap .date-box {
+    font-size: 1rem;
+  }
+  body .ts-outside-wrap .date-box .time {
+    font-size: 0.8rem;
+  }
+  body .ts-outside-wrap .ts-wrap ol {
     margin-top: 0.4rem;
   }
-  body .ts-wrap ol li {
-    font-size: 14px;
-    line-height: 1.2;
-  }
-}
-/*# sourceMappingURL=tsorder_styles.css.map */
+}/*# sourceMappingURL=tsorder_styles.css.map */
