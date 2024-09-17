@@ -28,6 +28,8 @@ body {
     position: relative;
 
     .ts-outside-wrap {
+        transform: scale(1.2);
+
         #background-video {
             position: absolute;
             top: 0;
@@ -40,7 +42,7 @@ body {
         .date-box {
             margin: 0.2rem;
             font-size: 1.5rem;
-            line-height: 1.5;
+            line-height: 1.2;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -59,7 +61,7 @@ body {
         .ts-wrap {
             box-sizing: border-box;
             margin: 0 0 2rem;
-            padding: 1.5rem 1rem 2rem;
+            padding: 1rem 1rem 1.2rem;
             font-family: "Nunito", sans-serif;
             border-top: 1px solid rgba(255, 255, 255, 0.3);
             border-left: 1px solid rgba(255, 255, 255, 0.3);
@@ -76,6 +78,7 @@ body {
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            font-size: 2vh;
 
             &.darkBG {
                 background: linear-gradient(35deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.3) 100%);
@@ -86,7 +89,7 @@ body {
                 z-index: 1;
                 text-transform: uppercase;
                 text-align: center;
-                font-size: 2rem;
+                font-size: 2.5em;
                 text-shadow: 0 0 10px rgb(255, 253, 233);
                 color: black;
 
@@ -97,7 +100,7 @@ body {
             }
 
             ol {
-                margin-top: 1rem;
+                margin-top: 1.2rem;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -108,7 +111,7 @@ body {
                     transition: all 0.3s;
                     text-shadow: 0 0 4px rgb(255, 253, 233);
                     font-weight: 600;
-                    font-size: 20px;
+                    font-size: 1.5em;
                     line-height: 1.4;
                     text-decoration: none;
                     cursor: pointer;
@@ -141,22 +144,47 @@ body {
     }
 }
 
-@media (max-height: 620px) {
+@media (max-height: 750px) {
     body {
-        .ts-wrap {
-            h1 {
-                text-transform: none;
-                font-size: 1.2rem;
+        .ts-outside-wrap {
+            transform: scale(1.1);
+
+            .date-box {
+                font-size: 1rem;
+
+                .time {
+                    font-size: 0.8rem;
+                }
             }
-
-            ol {
-                margin-top: 0.4rem;
-
-                li {
-                    font-size: 14px;
-                    line-height: 1.2;
+            .ts-wrap {
+                ol {
+                    margin-top: 0.4rem;
                 }
             }
         }
     }
 }
+
+// @media (max-height: 620px) {
+//     body {
+//         .ts-outside-wrap {
+//             transform: scale(1.1);
+
+// .ts-wrap {
+//     h1 {
+//         text-transform: none;
+//         font-size: 1.2rem;
+//     }
+
+//     ol {
+//         margin-top: 0.4rem;
+
+//         li {
+//             font-size: 14px;
+//             line-height: 1.2;
+//         }
+//     }
+// }
+//         }
+//     }
+// }
