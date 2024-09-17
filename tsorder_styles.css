@@ -139,11 +139,13 @@ body .ts-outside-wrap .ts-wrap ol li.darkBG:hover {
   body .ts-outside-wrap {
     transform: scale(1.1);
   }
-  body .ts-outside-wrap .date-box {
-    font-size: 1rem;
+  body .ts-outside-wrap .date-box .date {
+    font-size: 1.2rem;
+    color: rgba(0, 0, 0, 0.6);
   }
   body .ts-outside-wrap .date-box .time {
-    font-size: 0.8rem;
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.6);
   }
   body .ts-outside-wrap .ts-wrap ol {
     margin-top: 0.4rem;
