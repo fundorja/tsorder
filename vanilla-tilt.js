@@ -496,7 +496,7 @@ var VanillaTilt = (function () {
 })();
 
 VanillaTilt.init(document.querySelector(".ts-wrap"), {
-    scale: 1.02,
+    scale: 1.08,
     max: 5,
     speed: 700,
     glare: false,
