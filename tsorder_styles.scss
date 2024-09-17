@@ -27,111 +27,113 @@ body {
     font-family: Arial, sans-serif;
     position: relative;
 
-    #background-video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: -1;
-    }
-    .date-box {
-        margin: 0.2rem;
-        font-size: 1.5rem;
-        line-height: 1.5;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        .date {
+    .ts-outside-wrap {
+        #background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .date-box {
+            margin: 0.2rem;
             font-size: 1.5rem;
-            color: rgba(0, 0, 0, 0.8);
-        }
-        .time {
-            font-size: 1.2rem;
-            color: rgba(0, 0, 0, 0.6);
-        }
-    }
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
 
-    .ts-wrap {
-        box-sizing: border-box;
-        margin: 0 0 2rem;
-        padding: 1.5rem 1rem 2rem;
-        font-family: "Nunito", sans-serif;
-        border-top: 1px solid rgba(255, 255, 255, 0.3);
-        border-left: 1px solid rgba(255, 255, 255, 0.3);
-        background: linear-gradient(35deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.3) 100%);
-        width: 85vh;
-        height: 70vh;
-        border-radius: 2rem;
-        z-index: 20;
-        backdrop-filter: blur(5px);
-        box-shadow: 2px 2px 30px rgba(0, 22, 41, 0.3);
-        transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
-        will-change: transform;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        &.darkBG {
-            background: linear-gradient(35deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.3) 100%);
-        }
-
-        h1 {
-            position: relative;
-            z-index: 1;
-            text-transform: uppercase;
-            text-align: center;
-            font-size: 2rem;
-            text-shadow: 0 0 10px rgb(255, 253, 233);
-            color: black;
-
-            &.darkBG {
-                color: white;
-                text-shadow: 0 0 10px rgb(7, 7, 0);
+            .date {
+                font-size: 1.5rem;
+                color: rgba(0, 0, 0, 0.8);
+            }
+            .time {
+                font-size: 1.2rem;
+                color: rgba(0, 0, 0, 0.6);
             }
         }
 
-        ol {
-            margin-top: 1rem;
+        .ts-wrap {
+            box-sizing: border-box;
+            margin: 0 0 2rem;
+            padding: 1.5rem 1rem 2rem;
+            font-family: "Nunito", sans-serif;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            border-left: 1px solid rgba(255, 255, 255, 0.3);
+            background: linear-gradient(35deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.3) 100%);
+            width: 85vh;
+            height: 70vh;
+            border-radius: 2rem;
+            z-index: 20;
+            backdrop-filter: blur(5px);
+            box-shadow: 2px 2px 30px rgba(0, 22, 41, 0.3);
+            transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
+            will-change: transform;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
 
-            li {
-                user-select: none;
-                transition: all 0.3s;
-                text-shadow: 0 0 4px rgb(255, 253, 233);
-                font-weight: 600;
-                font-size: 20px;
-                line-height: 1.4;
-                text-decoration: none;
-                cursor: pointer;
+            &.darkBG {
+                background: linear-gradient(35deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.3) 100%);
+            }
+
+            h1 {
+                position: relative;
+                z-index: 1;
+                text-transform: uppercase;
+                text-align: center;
+                font-size: 2rem;
+                text-shadow: 0 0 10px rgb(255, 253, 233);
                 color: black;
-
-                &.strike {
-                    text-decoration: line-through;
-                    color: rgba(0, 0, 0, 0.4);
-                }
-
-                &:hover {
-                    text-shadow: 0 0 6px rgb(255, 254, 250);
-                    transform: scale(1.03);
-                }
 
                 &.darkBG {
                     color: white;
-                    text-shadow: 0 0 4px rgb(11, 10, 0);
+                    text-shadow: 0 0 10px rgb(7, 7, 0);
+                }
+            }
+
+            ol {
+                margin-top: 1rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                li {
+                    user-select: none;
+                    transition: all 0.3s;
+                    text-shadow: 0 0 4px rgb(255, 253, 233);
+                    font-weight: 600;
+                    font-size: 20px;
+                    line-height: 1.4;
+                    text-decoration: none;
+                    cursor: pointer;
+                    color: black;
 
                     &.strike {
-                        color: rgba(255, 255, 255, 0.4);
+                        text-decoration: line-through;
+                        color: rgba(0, 0, 0, 0.4);
                     }
+
                     &:hover {
-                        text-shadow: 0 0 6px rgb(5, 4, 0);
+                        text-shadow: 0 0 6px rgb(255, 254, 250);
+                        transform: scale(1.03);
+                    }
+
+                    &.darkBG {
+                        color: white;
+                        text-shadow: 0 0 4px rgb(11, 10, 0);
+
+                        &.strike {
+                            color: rgba(255, 255, 255, 0.4);
+                        }
+                        &:hover {
+                            text-shadow: 0 0 6px rgb(5, 4, 0);
+                        }
                     }
                 }
             }
