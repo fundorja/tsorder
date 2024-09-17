@@ -5,7 +5,7 @@ const apiKey = "563492ad6f917000010000018eab46c0ee374b6eb502a86a04ce109c";
 // const natureEndpoint = "https://api.pexels.com/v1/search?query=breathtaking?per_page=1";
 // const query = "breathtaking";
 // const query = "background";
-const query = "beautiful nature";
+const query = "nature background";
 const totalPages = 1024;
 
 function getRandomPage() {
