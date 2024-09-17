@@ -3,9 +3,9 @@ const powerUpSound = new Audio("powerUp.wav");
 const explosionSound = new Audio("explosion.wav");
 let isClicked = false;
 
-sound.volume = 0.4;
-powerUpSound.volume = 0.5;
-explosionSound.volume = 0.8;
+sound.volume = 0.2;
+powerUpSound.volume = 0.3;
+explosionSound.volume = 0.4;
 
 function addLiHover() {
     const nameElements = document.querySelectorAll(".ts-wrap li");
