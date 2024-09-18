@@ -65,7 +65,7 @@ body {
             font-family: "Nunito", sans-serif;
             border-top: 1px solid rgba(255, 255, 255, 0.3);
             border-left: 1px solid rgba(255, 255, 255, 0.3);
-            background: linear-gradient(35deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.3) 100%);
+            background: linear-gradient(35deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.6) 100%);
             width: 85vh;
             height: 70vh;
             border-radius: 2rem;
@@ -81,7 +81,7 @@ body {
             font-size: 2vh;
 
             &.darkBG {
-                background: linear-gradient(35deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.3) 100%);
+                background: linear-gradient(35deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%);
             }
 
             h1 {
