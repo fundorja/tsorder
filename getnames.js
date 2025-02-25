@@ -3,7 +3,7 @@
 // const unstrokeSound = new Audio("bubbles-03-91268.wav");
 // const pageLoadSound = new Audio("sub-drop-short-232033.wav");
 // const hoverSound = new Audio("punch-short.wav");
-const hoverSound = new Audio("bubbles-short.wav");
+const hoverSound = new Audio("bubble-short.wav");
 const strokeSound = new Audio("punch-short.wav");
 const unstrokeSound = new Audio("sub-drop-short-232033.wav");
 const pageLoadSound = new Audio("pickupCoin.wav");
