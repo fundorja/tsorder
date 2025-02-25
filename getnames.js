@@ -2,9 +2,9 @@
 // const strokeSound = new Audio("chalkScratch.wav");
 // const unstrokeSound = new Audio("bubbles-03-91268.wav");
 // const pageLoadSound = new Audio("sub-drop-short-232033.wav");
-const hoverSound = new Audio("bubbles-03-91268.wav");
+const hoverSound = new Audio("punch-short.wav");
 const strokeSound = new Audio("sub-drop-short-232033.wav");
-const unstrokeSound = new Audio("chalkScratch.wav");
+const unstrokeSound = new Audio("bubbles-03-91268.wav");
 const pageLoadSound = new Audio("pickupCoin.wav");
 let isClicked = false;
 
