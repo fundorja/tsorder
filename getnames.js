@@ -1,6 +1,7 @@
 const hoverSound = new Audio("pickupCoin.wav");
 const strokeSound = new Audio("chalkScratch.wav");
-const unstrokeSound = new Audio("sub-drop-short-232033.wav");
+const unstrokeSound = new Audio("bubbles-03-91268.wav");
+const pageLoadSound = new Audio("sub-drop-short-232033.wav");
 let isClicked = false;
 
 hoverSound.volume = 0.1;
